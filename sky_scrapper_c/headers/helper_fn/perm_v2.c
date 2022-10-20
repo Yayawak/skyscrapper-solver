@@ -53,24 +53,24 @@ void printArray( int* a, int len)
 # include <stdlib.h>
 
 /* permute an array recursively */ 
-//void permute(int *arr, int start, int end) 
-int	**permute(int *arr, int start, int end) 
+void permute(int *arr, int start, int end) 
+/* int	**permute(int *arr, int start, int end) */ 
 //int	*permute(int *arr, int start, int end) 
-{ 
-		int	**result_arr;
+{
+		/* int	**result_arr; */
 		int i; 
 
-		result_arr = (int**)malloc(sizeof(int**) * 4 * 4);
+		/* result_arr = (int**)malloc(sizeof(int**) * 4 * 4); */
 		if(start == end) /* this function is done */ 
 		{ 
-				//printArray(arr, end); 
+				printArray(arr, end); 
 
 				// ml
-				result_arr =  (int**)malloc(sizeof(int**) * 4);
-				*result_arr = arr;
-				result_arr++;
+				/* result_arr =  (int**)malloc(sizeof(int**) * 4); */
+				/* *result_arr = arr; */
+				/* result_arr++; */
 				//return (arr); 
-				//return; 
+				return; 
 		} 
 		permute(arr, start + 1, end); /* start at next element */ 
 
@@ -82,7 +82,7 @@ int	**permute(int *arr, int start, int end)
 				permute(arr, start + 1, end); 
 				swap(arr, start, i); /* restore element order */  
 		} 
-		return (result_arr);
+		/* return (result_arr); */
 } 
 
 /* do it */ 
@@ -92,7 +92,7 @@ int main( int argc, char** argv)
 		int arr[] = { 1, 2, 3, 4 }; 
 
 		permute( arr, 0, 4);  /* array len = 4 */ 
-		print2DArray(permute( arr, 0, 4), 4);
+		/* print2DArray(permute(arr, 0, 4), 4); */
 
 		return 0; 
 } 
